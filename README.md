@@ -18,19 +18,19 @@ The final Android application performs object detection directly on the device. 
 * Custom YOLO-based object-detection model
 * Float32 TensorFlow Lite model for on-device inference
 * Three-zone movement tracking
-* Automatic product addition with the `A → B → C` sequence
-* Automatic product removal with the `C → B → A` sequence
+    * Automatic product addition with the `A → B → C` sequence
+    * Automatic product removal with the `C → B → A` sequence
 * Bounding boxes, class labels, and confidence scores
 * Market selection and local product information
 * Cart quantity controls and total-price calculation
 * Scanner sound feedback when an item is added
 * Checkout simulation
 
-## Demo Video
+## Introduction Video
 
-[Watch the project demonstration on YouTube](YOUTUBE_LINK_HERE)
+https://studio.youtube.com/video/U4oLo4mSRLA/edit
 
-> **Before submission:** Replace `YOUTUBE_LINK_HERE` with the final YouTube video URL.
+
 
 ## System Architecture
 
@@ -66,7 +66,7 @@ flowchart LR
 
 ### Data Source
 
-No public internet dataset was used. The training data was collected directly by the project team.
+No public internet dataset was used. The training data was collected directly by the our team.
 
 ### Data Collection and Annotation
 
@@ -84,13 +84,11 @@ No public internet dataset was used. The training data was collected directly by
 | -------------------- | ------------------------------- |
 | Data source          | Self-collected product videos   |
 | Number of classes    | 8                               |
-| Total labeled images | **INSERT_FINAL_IMAGE_COUNT**    |
+| Total labeled images | 2000+                           |
 | Annotation type      | Object-detection bounding boxes |
 | Annotation platform  | Roboflow                        |
 | Dataset format       | YOLO format                     |
-| Public dataset link  | Not applicable                  |
 
-> **Before submission:** Replace `INSERT_FINAL_IMAGE_COUNT` with the exact number of labeled images in the final dataset. The exact total is not recorded in the public repositories.
 
 ### Product Labels
 
@@ -110,11 +108,8 @@ flowchart LR
     A[Record Product Videos] --> B[Extract Video Frames]
     B --> C[Upload to Roboflow]
     C --> D[Manual Bounding-Box Labeling]
-    D --> E[Data Augmentation]
-    E --> F[Train Lightweight YOLO Model]
-    F --> G[Validate the Model]
-    G --> H[Export to Float32 TFLite]
-    H --> I[Run On-Device in Android]
+    D --> E[Train Lightweight YOLO Model]
+    E --> F[Export to Float32 TFLite]
 ```
 
 The trained model is stored in the Android application as:
@@ -139,19 +134,20 @@ app/src/main/assets/best_float32.tflite
 
 ## Current Limitations
 
-* The current model supports only eight product classes.
-* Recognition performance may decrease under severe blur, occlusion, or unfamiliar backgrounds.
-* Fast-falling products are difficult to detect because they remain in each zone for only a short time and may appear blurred in ordinary smartphone-camera frames.
-* Product and stock data are stored locally for demonstration purposes.
-* The application does not currently include user registration or login.
+1. The current model supports only eight product classes.
+2. Recognition performance may decrease under severe blur, occlusion, or unfamiliar backgrounds.
+3. Fast-falling products are difficult to detect because they remain in each zone for only a short time and may appear blurred in ordinary smartphone-camera frames.
+4. Product and stock data are stored locally for demonstration purposes.
+5. The application does not currently include user registration or login.
 
 ## Future Work
 
-* Expand the dataset to at least 50 product classes
-* Collect more data under diverse lighting, angles, and backgrounds
-* Improve fast-object detection with a higher-frame-rate or slow-motion camera
-* Add user authentication
-* Connect the application to a real product and inventory database
+1. Expand the dataset to at least 50 product classes
+2. Collect more data under diverse lighting, angles, and backgrounds
+3. Improve fast-object detection with a higher-frame-rate or slow-motion camera
+4. Connect the application to a real product and inventory database
+5. Add user authentication
+
 
 ## Project Scope
 
