@@ -20,11 +20,16 @@ The final Android application performs object detection directly on the device. 
 * Three-zone movement tracking
     * Automatic product addition with the `A → B → C` sequence
     * Automatic product removal with the `C → B → A` sequence
-* Bounding boxes, class labels, and confidence scores
 * Market selection and local product information
 * Cart quantity controls and total-price calculation
 * Scanner sound feedback when an item is added
 * Checkout simulation
+
+## Directory
+
+android/ : android app
+yolo-test/ : yolo test with FastAPI
+
 
 ## Introduction Video
 
@@ -48,8 +53,7 @@ flowchart LR
     I --> G
     F --> J[Cart State]
     G --> J
-    J --> K[Jetpack Compose UI]
-    K --> L[Quantity, Total Price,<br/>and Checkout]
+    J --> K[Quantity, Total Price,<br/>and Checkout]
 ```
 
 ## How It Works
