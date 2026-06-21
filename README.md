@@ -28,8 +28,9 @@ The final Android application performs object detection directly on the device. 
 
 ## Introduction Video
 
-https://studio.youtube.com/video/U4oLo4mSRLA/edit
+https://youtu.be/U4oLo4mSRLA?si=33vR1JdVAmZlrnj3
 
+---
 
 
 ## System Architecture
