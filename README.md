@@ -28,6 +28,7 @@ The final Android application performs object detection directly on the device. 
 ## Directory
 
 android/ : android app
+
 yolo-test/ : yolo test with FastAPI
 
 
